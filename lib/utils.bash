@@ -47,18 +47,18 @@ get_platform() {
 }
 
 get_system_architecture() {
-  local architechture
-  architechture=$(uname -m)
-  case $architechture in
-  armv*) architechture="ARM" ;;
-  aarch64) architechture="ARM64" ;;
-  x86_64) architechture="64bit" ;;
+  local architecture
+  architecture=$(uname -m)
+  case $architecture in
+  armv*) architecture="ARM" ;;
+  aarch64) architecture="ARM64" ;;
+  x86_64) architecture="64bit" ;;
   esac
-  echo "$architechture"
+  echo "$architecture"
 }
 
 download_release() {
-  local version platform architechture filename url
+  local version platform architecture filename url
   version="$1"
   platform="$(get_platform)"
   architecture="$(get_system_architecture)"
